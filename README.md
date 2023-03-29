@@ -1,0 +1,1 @@
+# aws-amplify-nextjs-ssr
