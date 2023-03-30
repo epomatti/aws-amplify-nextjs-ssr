@@ -1,6 +1,15 @@
-# aws-amplify-nextjs-ssr
+# AWS Amplify with Next.js SSR
 
-Set your repository key as a `$token` variable.
+Before deploying, check the app locally:
+
+```
+npm install
+npm run dev
+```
+
+Test it: `http://localhost:3000/`
+
+For the cloud, set your repository key as a `$token` variable, and create the Amplify app:
 
 ```
 aws amplify create-app \
@@ -14,4 +23,4 @@ aws amplify create-branch \
   --branch-name main
 ```
 
-
+Access the SSR application running on the cloud.

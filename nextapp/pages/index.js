@@ -1,7 +1,14 @@
 import Head from 'next/head';
 import styles from '../styles/Home.module.css';
 
-export default function Home() {
+export async function getServerSideProps() {
+  const res = await fetch(`https://dummyjson.com/products/1`)
+  const data = await res.json()
+  const info = "This data was rended on a server runtime."
+  return { props: { info, data } }
+}
+
+export default function SSRPage({ info, data }) {
   return (
     <div className={styles.container}>
       <Head>
@@ -10,9 +17,9 @@ export default function Home() {
       </Head>
 
       <main>
-        <h1 className={styles.title}>
-          Welcome to Next.js!
-        </h1>
+        <h1>🤖 {info} 🤖</h1>
+        <br></br>
+        <h2>{data.title}</h2>
       </main>
 
       <style jsx>{`
