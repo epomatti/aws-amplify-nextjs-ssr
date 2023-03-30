@@ -8,4 +8,9 @@ aws amplify create-app \
   --region us-east-2
   --repository "https://github.com/epomatti/aws-amplify-nextjs-ssr" \
   --access-token $token
+
+aws amplify create-branch \
+  --app-id <appid> \
+  --branch-name main
 ```
+
