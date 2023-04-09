@@ -9,6 +9,17 @@ npm run dev
 
 Test it: `http://localhost:3000/`
 
+Create the DynamoDB table:
+
+```
+aws dynamodb create-table \
+    --table-name MusicCollection \
+    --region us-east-2 \
+    --attribute-definitions AttributeName=Artist,AttributeType=S AttributeName=SongTitle,AttributeType=S \
+    --key-schema AttributeName=Artist,KeyType=HASH AttributeName=SongTitle,KeyType=RANGE \
+    --billing-mode PAY_PER_REQUEST
+```
+
 For the cloud, set your repository key as a `$token` variable, and create the Amplify app:
 
 ```
